@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { ApiQuery } from '@nestjs/swagger';
+import { ApiParam, ApiProperty, ApiQuery } from '@nestjs/swagger';
 import { Empleados } from './empleados.interface';
 import { EmpleadosService } from './empleados.service';
 
@@ -8,6 +8,7 @@ export class EmpleadosController {
     
     constructor(private readonly servicio: EmpleadosService){}
 
+    
     @Get()
     ObtenerTodos():Promise<Empleados[]> {
         return this.servicio.todos();

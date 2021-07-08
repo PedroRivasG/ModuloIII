@@ -14,8 +14,8 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app,config);
   SwaggerModule.setup('docpagos',app,document);
-
   //Documentacion
-  await app.listen(3000);
+  
+  await app.listen(process.env.POR || 3000);
 }
 bootstrap();
